@@ -114,9 +114,34 @@ def spam2(n):
         count=count+1   
 if __name__=='__funcoes__':
         spam2() 
+#Questão 8:Mostrar o números de números impares no intervalo
+def nimpar(n):
+    for i in range(1,n+1,2):
+        print(i)
+if __name__=='__impar__':
+    nimpar()
 
-    
-#Questão 9: Determina valor máximo
+#Questão 9: Exibe intervalo,usando for
+def intervalo(x,y):
+        if x<y:
+            for i in range(x,y+1,1):
+                print(i)
+        else:
+            None
+ 
+def intervalo2(x,y): #exibe intervalo usando while
+        sum=0
+        count=x
+        if x<y:
+            while count<y:
+                sum=sum+1
+                print(sum)
+                count=count+1
+if __name__=='__funcoes__':
+    intervalo2()
+            
+ 
+#Questão : Determina valor máximo
 def detvm(a,b,c,d,e):
     
     if a==b:
@@ -169,44 +194,101 @@ def sninteirosf(x,y):
 
 if __name__=='__funcoes__':
     sninteirosf() 
-
+    
 #Questão 13: Calcula soma ora negativa,ora positiva n vezes
 def nsum(n):
-    soma = 0
+    sum = 0
     for i in range(1, n+1, 1):
         if i % 2 == 0:
-            soma += i
+            sum += i
         else:
-            soma -= i
-    print(soma)
+            sum -= i
+    print(sum)
 if __name__=='__funcoes__':
-    sninteirosf() 
+    nsum() 
 
-#Questão 14: Calcule n sendo n>=0
+#Questão 13.2:Calculo negativo impar ,positivo par
+# def nsum2(n):
+    # sum = 0
+    # aux=0
+    # while(aux<=n):
+        # if (aux % 2 == 0):
+            # sum +=sum+aux
+        # else:
+            # sum -= sum-aux
+        # aux=aux+1
+    # print(sum)
+# if __name__=='__funcoes__':
+    # nsum2() 
+#Questão 14: Calcule n sendo n!
 def nsump(n):
     dt = 1
     while n > 1:
         dt *= n
         n -= 1     
-    print(dt)
+    return(dt)
 if __name__=='__funcoes__':
     nsump() 
 
 #Questão15: Impossível calcular 
     
-#Questão 16:Erro
+#Questão 16:Resolvido
 
-def nlast(a,b):
-    while ((b!=0) and(a%10== b%10)):
-        a=a/10
-        b=b/10
-        if (b==0):
+# def nlast(a,b):
+    # while ((b!=0) and(a%10== b%10)):
+        # a=a/10
+        # b=b/10
+        # if (b==0):
+            # return True
+        # else:
+            # return False
+
+#!/usr/bin/python
+# nlast
+ 
+def nlast(a, b):
+  if b<a:
+    while True:
+        print(a, b)
+        if 0 == b:
             return True
+        elif b % 10 == a % 10:
+            b //= 10
+            a //= 10
         else:
             return False
 if __name__=='__funcoes__':
-    nlast()     
-
+    nlast() 
+def nlaststr(a, b):
+    a, b = str(a), str(b)
+    return a.endswith(b)
+if __name__=='__funcoes__':
+    nlaststr() 
+ 
+# def nlast3():
+    # from funcoes import nlast
+    # print('nlast(12345, 45): {}'.format(nlast(12345, 45)))
+    # print('nlast(2026, 2026): {}'.format(nlast(2026, 2026)))
+    # print('nlast(45, 12345): {}'.format(nlast(45, 12345)))
+ 
+    # print('nlaststr(12345, 45): {}'.format(nlaststr(12345, 45)))
+    # print('nlaststr(2026, 2026): {}'.format(nlaststr(2026, 2026)))
+    # print('nlaststr(45, 12345): {}'.format(nlaststr(45, 12345)))
+# if __name__ == '__funcoes__':
+    # nlast3()                
+#Questão 16.3 outras soluções
+def encaixa(a,b):
+    debug=True
+    if debug:
+        print("a:
+    if (b<a):
+        return "Não encaixa"
+    if (b==a):
+        return "Encaixa"
+    elif (a-b)%10==0:
+        return "Encaixa"
+    else:
+        "Não encaixa"
 #Questão 17:Fibonacci
 def fib(n):
     a, b = 0, 1
@@ -219,7 +301,7 @@ if __name__=='__funcoes__':
 def fib2(n):
     sum=1
     a= 0
-    b = 1;
+    b = 1
     print(a)
     while (b<n):
         c=a
